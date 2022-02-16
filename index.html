@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link type="text/css" href="css/style.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous"
+        />
+
+        <title>A shopping cart</title>
+    </head>
+
+    <body>
+        <!--Navbar-->
+        <nav>
+            <!--Navbar has two part the top one and the bottom one-->
+            <!--Here is top one and in this part I put logo, my account part, and the shopping cart-->
+            <div class="navbar-top">
+                <div>
+                    <button id="menuButton"><i class="fas fa-bars"></i></button>
+                    <!--Logo-->
+                    <a href="index.html">
+                        <h2 class="logo">JOYZ</h2>
+                    </a>
+                </div>
+                <div>
+                    <!--My account part-->
+                    <div class="account">
+                        <a href="index.html">
+                            <button class="account-btn">
+                                <i class="fas fa-user-alt"></i>
+                            </button>
+                            <span class="account-text">My account</span>
+                        </a>
+                        <!--When we click the btnShowAccountInfo this section will be displayed-->
+                    </div>
+                    <!--Shopping cart-->
+                    <div class="shopping-cart">
+                        <div class="sum-prices">
+                            <!--Shopping cart logo-->
+                            <i
+                                class="fas fa-shopping-cart shoppingCartButton"
+                            ></i>
+                            <!--The total prices of products in the shopping cart -->
+                            <h6 id="sum-prices"></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar bottom part -->
+            <!-- Here I put the links to the other pages or nav links -->
+            <div class="navbar" id="navbar">
+                <div class="links">
+                    <ul>
+                        <li class="nav-links">
+                            <a href="" class="link">Home</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="#" class="link">About us</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="#" class="link">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- The searchbar which will be in the right side of the links -->
+                <div class="searchbar">
+                    <form action="#">
+                        <input type="search" placeholder="Type anything here" />
+                        <i class="fa fa-search" id="search-icon"></i>
+                    </form>
+                </div>
+            </div>
+
+            <!-- PRODUCT -->
+            <div class="producstOnCart hide">
+                <div class="overlay"></div>
+                <div class="top">
+                    <button id="closeButton">
+                        <i class="fas fa-times-circle"></i>
+                    </button>
+                    <h3>Cart</h3>
+                </div>
+
+                <!-- BUYITEMS-->
+                <ul id="buyItems">
+                    <h4 class="empty">Your shopping cart is empty</h4>
+                    <!-- <li class="buyItem">
+						<img src="Images/producs-images/Mobiles/galaxynote10.png">
+						<div>
+							<h5>Products Name</h5>
+							<h6>#199</h6>
+							<div>
+								<button>-</button>
+								<span class="countOfProduct">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</li> -->
+                </ul>
+                <button class="btn checkout hidden">Check out</button>
+            </div>
+        </nav>
+   
+        <main>
+            <section class="main-section">
+                <div class="product-container">
+                    <div class="products">
+                        <div class="product">
+
+                            <!-- PRODUCTUNDER-->
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="Images/products-images/men/m2ii.jpg"
+                                        alt=""
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="1"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >More Info</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">Incerun 2 in 1 Mens Vintage</h4>
+                                    <p>
+                                       Vintage Graffiti Printed Suits 
+                                    </p>
+                                    <h6 class="price">
+                                        #<span class="priceValue">7300</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+
+                            <!--PRODUCTUNDER-->
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="Images/products-images/women/w3i.jpg"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="2"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >More Info</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName"> 
+                                        Aomei Party Printed Dress
+                                    </h4>
+                                    <p>
+                                        Aomei Party Printed Dress Women Transparent
+                                        Sleeve PatchWork Blue 
+                                    </p>
+                                    <h6 class="price">
+                                        #<span class="priceValue">8199</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="Images/products-images/women/wi.jpg"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="3"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >More Info</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">Aomei Women Bodycon</h4>
+                                    <p>
+                                        Aomei Women Bodycon Dress Patchwrok office
+                                        Lady OL Yellow Purple
+                                    </p>
+                                    <h6 class="price">
+                                        #<span class="priceValue">6999</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="Images/products-images/HA/h14.jpg"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="4"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >More Info</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">World Elite Chest Freezer - 216L</h4>
+                                    <p>
+                                        
+                                    </p>
+                                    <h6 class="price">
+                                        #<span class="priceValue">164890</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main-section">
+                <div class="pop-mobiles">
+                    <h3>More Products</h3>
+                    <div class="pop-mobiles-2">
+                        <ul class="products">
+                            <li class="product">
+                                <div class="product-under">
+                                    <figure class="product-image">
+                                        <img
+                                            src="Images/products-images/HA/h14.jpg"
+                                            alt="popular mobiles"
+                                        />
+                                        <div class="product-over">
+                                            <button
+                                                class="btn btn-small addToCart"
+                                                data-product-id="5"
+                                            >
+                                                <i class="fas fa-cart-plus"></i
+                                                >Add to cart
+                                            </button>
+                                            <a
+                                                href="detail_page.html"
+                                                class="btn btn-small"
+                                                >More Info</a
+                                            >
+                                        </div>
+                                    </figure>
+                                    <div class="product-summary">
+                                        <h4 class="productName">World Elite Chest Freezer - 216L</h4>
+                                        <h4 class="price">
+                                            #<span class="priceValue"
+                                                >105000</span
+                                            >
+                                        </h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="product">
+                                <div class="product-under">
+                                    <figure class="product-image">
+                                        <img
+                                            src="Images/products-images/HA/H3I.jpg"
+                                            alt="popular mobiles"
+                                        />
+                                        <div class="product-over">
+                                            <button
+                                                class="btn btn-small addToCart"
+                                                data-product-id="6"
+                                            >
+                                                <i class="fas fa-cart-plus"></i
+                                                >Add to cart
+                                            </button>
+                                            <a
+                                                href="detail_page.html"
+                                                class="btn btn-small"
+                                                >More Info</a
+                                            >
+                                        </div>
+                                    </figure>
+                                    <div class="product-summary">
+                                        <h4 class="productName">Sony 4k Android</h4>
+                                        <P>
+                                            Sony 4k Android TV 75" Class HDR 4K UHD Smart
+                                            LED TV 2020 Model
+                                        </P>
+                                        <h4 class="price">
+                                            #<span class="priceValue">113200</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="product">
+                                <div class="product-under">
+                                    <figure class="product-image">
+                                        <img
+                                            src="Images/products-images/men/m3iii.jpg"
+                                            alt="popular mobiles"
+                                        />
+                                        <div class="product-over">
+                                            <button
+                                                class="btn btn-small addToCart"
+                                                data-product-id="7"
+                                            >
+                                                <i class="fas fa-cart-plus"></i
+                                                >Add to cart
+                                            </button>
+                                            <a
+                                                href="detail_page.html"
+                                                class="btn btn-small"
+                                                >More Info</a
+                                            >
+                                        </div>
+                                    </figure>
+                                    <div class="product-summary">
+                                        <h4 class="productName">Defacto Men Black Trousers</h4>
+                                        <h4 class="price">
+                                            #<span class="priceValue">4204</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="product">
+                                <div class="product-under">
+                                    <figure class="product-image">
+                                        <img
+                                            src="Images/products-images/men/m6.jpg"
+                                            alt="popular mobiles"
+                                        />
+                                        <div class="product-over">
+                                            <button
+                                                class="btn btn-small addToCart"
+                                                data-product-id="8"
+                                            >
+                                                <i class="fas fa-cart-plus"></i
+                                                >Add to cart
+                                            </button>
+                                            <a
+                                                href="detail_page.html"
+                                                class="btn btn-small"
+                                                >More Info</a
+                                            >
+                                        </div>
+                                    </figure>
+                                    <div class="product-summary">
+                                        <h4 class="productName">Mens' 2 in 1 Short Sleeve T-shirt</h4>
+                                        <h4 class="price">
+                                            #<span class="priceValue">3599</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="product">
+                                <div class="product-under">
+                                    <figure class="product-image">
+                                        <img
+                                            src="Images/products-images/HA/m6.jpg"
+                                            alt="popular mobiles"
+                                        />
+                                        <div class="product-over">
+                                            <button
+                                                class="btn btn-small addToCart"
+                                                data-product-id="9"
+                                            >
+                                                <i class="fas fa-cart-plus"></i
+                                                >Add to cart
+                                            </button>
+                                            <a
+                                                href="detail_page.html"
+                                                class="btn btn-small"
+                                                >More Info</a
+                                            >
+                                        </div>
+                                    </figure>
+                                    <div class="product-summary">
+                                        <h4 class="productName">Just a testing product</h4>
+                                        <h4 class="price">
+                                            #<span class="priceValue">80000</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="product">
+                                <div class="product-under">
+                                    <figure class="product-image">
+                                        <img
+                                            src="Images/products-images/HA/bg.jpg"
+                                            alt="popular mobiles"
+                                        />
+                                        <div class="product-over">
+                                            <button
+                                                class="btn btn-small addToCart"
+                                                data-product-id="10"
+                                            >
+                                                <i class="fas fa-cart-plus"></i
+                                                >Add to cart
+                                            </button>
+                                            <a
+                                                href="detail_page.html"
+                                                class="btn btn-small"
+                                                >More Info</a
+                                            >
+                                        </div>
+                                    </figure>
+                                    <div class="product-summary">
+                                        <h4 class="productName">Just another Testing Product</h4>
+                                        <h4 class="price">
+                                            #<span class="priceValue">7690</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-second">
+                <div class="footer-column-1">
+                    <h3>ABOUT US</h3>
+                </div>
+                <div class="footer-column-2">
+                    <h3>EXPLORE</h3>
+                    
+                </div>
+                <div class="footer-column-3">
+                    <h3>CONTACT US</h3>
+                </div>
+            </div>
+        </footer>
+        <script src="JS/script.js"></script>
+        <script src="cart.js"></script>
+    </body>
+</html>
